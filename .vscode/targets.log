@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Mon Jun 27 13:47:50 2022
+# Make data base, printed on Mon Jul  4 18:39:18 2022
 
 # Variables
 
@@ -51,7 +52,7 @@ SNAP_DATA = /var/snap/code/99
 # environment
 VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"195456cb6bc5e7dd989215cd334fb359.pt-br","_translationsConfigFile":"/home/cadu/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/tcf.json","_cacheRoot":"/home/cadu/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br","_resolvedLanguagePackCoreLocation":"/home/cadu/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/cadu/.config/Code/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 9:47218
+JOURNAL_STREAM = 9:45392
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -75,9 +76,9 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1820
+MANAGERPID = 1860
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-dfb5c401-b98f-40fa-9890-c8102dd118db.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c406c4cf-ee47-4086-a38c-b68e51158c54.sock
 # environment
 VSCODE_CWD = /home/cadu
 # environment
@@ -89,7 +90,7 @@ PATH = /home/cadu/bin:/home/cadu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/cadu-Inspiron-3442:@/tmp/.ICE-unix/2196,unix/cadu-Inspiron-3442:/tmp/.ICE-unix/2196
+SESSION_MANAGER = local/cadu-Inspiron-3442:@/tmp/.ICE-unix/2226,unix/cadu-Inspiron-3442:/tmp/.ICE-unix/2226
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -109,7 +110,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 PASSWORD = sense8
 # environment
-INVOCATION_ID = e5f526b59e9245f0a9b6403b90a9bcc2
+INVOCATION_ID = d128e04cf2e7412782996a2312d1bafd
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/99/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -119,7 +120,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 22857
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2760
 # automatic
 %F = $(notdir $%)
 # environment
@@ -137,7 +138,7 @@ QT_QPA_PLATFORMTHEME = appmenu-qt5
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2159
+SSH_AGENT_PID = 2189
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -271,9 +272,9 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 22907
+VSCODE_PID = 2823
 # variable set hash-table stats:
-# Load=131/1024=13%, Rehash=0, Collisions=16/166=10%
+# Load=131/1024=13%, Rehash=0, Collisions=16/167=10%
 
 # Pattern-specific Variable Values
 
@@ -281,10 +282,9 @@ VSCODE_PID = 22907
 
 # Directories
 
-# . (device 2054, inode 134147): 6 files, no impossibilities.
+# . (device 2054, inode 134147): 8 files, no impossibilities.
 
- 
-# 6 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -307,6 +307,7 @@ all:
 # * := 
 # automatic
 # + := 
+ 
 # automatic
 # | := 
 # automatic
@@ -316,9 +317,10 @@ all:
 # automatic
 # ? := 
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/14=14%
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
 #  recipe to execute (from 'Makefile', line 9):
 	g++ $(CMPS) -o $(TARGET_EXEC) $(FLAGS)
+	./$(TARGET_EXEC)
 
 # Not a target:
 .SUFFIXES:
@@ -329,7 +331,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 10:11:04.566988
+#  Last modified 2022-07-04 18:39:15.290138896
 #  File has been updated.
 #  Successfully updated.
 
@@ -347,12 +349,12 @@ Makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 11 / storage = 86 B / avg = 7 B
-# current buf: size = 8162 B / used = 86 B / count = 11 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 13 / storage = 101 B / avg = 7 B
+# current buf: size = 8162 B / used = 101 B / count = 13 / avg = 7 B
 
-# strcache performance: lookups = 18 / hit rate = 38%
+# strcache performance: lookups = 20 / hit rate = 35%
 # hash-table stats:
-# Load=11/8192=0%, Rehash=0, Collisions=1/18=6%
-# Finished Make data base on Mon Jun 27 13:47:50 2022
+# Load=13/8192=0%, Rehash=0, Collisions=1/20=5%
+# Finished Make data base on Mon Jul  4 18:39:18 2022
 
  

@@ -52,8 +52,8 @@ Game::~Game(){
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
 
-    delete Instance;
     Instance = nullptr;
+    delete Instance;
 }
 
 SDL_Renderer* Game::GetRenderer(){

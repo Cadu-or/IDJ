@@ -1,8 +1,8 @@
 #include "../include/Game.h"
 
 int main(int argc, char** argv){
-    Game *a = Game::GetInstance();
-    a->Run();
+    Game *game = Game::GetInstance();
+    game->Run();
 
     return 0;
 }

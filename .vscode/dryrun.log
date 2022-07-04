@@ -1,5 +1,6 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/cadu/Área de Trabalho/T1'
 g++ ./src/components/Music.cpp ./src/components/Sprite.cpp ./src/components/State.cpp ./src/components/main.cpp ./src/components/Game.cpp -o game -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
+./game
 make: Leaving directory '/home/cadu/Área de Trabalho/T1'
  

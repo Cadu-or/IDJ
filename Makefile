@@ -7,3 +7,4 @@ CMPS := $(shell find $(CMP_DIR) -name '*.cpp')
 
 all:
 	g++ $(CMPS) -o $(TARGET_EXEC) $(FLAGS)
+	./$(TARGET_EXEC)
