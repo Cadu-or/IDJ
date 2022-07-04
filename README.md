@@ -1,5 +1,5 @@
-# IDJ
-## T1 da disciplina.
+# Introdução ao Desenvolvimento de Jogos.
+### Trabalho 1 da disciplina.
 
 Programa desenvolvido utilizando o Ubuntu 20.04.
 
