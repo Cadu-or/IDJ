@@ -7,6 +7,7 @@
 #include "SDL_include.h"
 #include <bits/stdc++.h>
 #include "Component.h"
+#include "Sound.h"
 
 class Face : public Component{
     private:
