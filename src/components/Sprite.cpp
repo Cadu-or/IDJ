@@ -17,7 +17,7 @@ Sprite::~Sprite(){
 
 void Sprite::Open(std::string file){
 
-    texture = IMG_LoadTexture(Game::GetInstance()->GetRenderer(), file.c_str());
+    texture = IMG_LoadTexture(Game::GetInstance().GetRenderer(), file.c_str());
     std::cout << texture << std::endl;
     if(SDL_QueryTexture(texture, nullptr, nullptr, &width, &height) != 0){
         std::cout << "ERROR: QueryTexture" << std::endl;
@@ -39,7 +39,7 @@ void Sprite::Render(int x, int y){
     dst.w = clipRect.w;
     dst.h = clipRect.h;
 
-    if(SDL_RenderCopy(Game::GetInstance()->GetRenderer(), texture, &clipRect, &dst) != 0){
+    if(SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dst) != 0){
         std::cout << "ERROR: RenderCopy" << std::endl;
     }
 }
@@ -53,11 +53,5 @@ int Sprite::GetWidth(){
 }
 
 bool Sprite::IsOpen(){
-    if(texture == nullptr){
-        return false;
-
-    }else{
-        return true;
-
-    }
+    return (texture == nullptr ? false : true);
 }
