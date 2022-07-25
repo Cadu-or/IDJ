@@ -2,12 +2,12 @@
 
 Game* Game::Instance(nullptr);
 
-Game* Game::GetInstance(){
+Game& Game::GetInstance(){
     if(Instance == nullptr){
         Instance = new Game("Carlos Eduardo de O Ribeiro - 180099094", 1024, 600);
     }
 
-    return Instance;
+    return *Instance;
 }
 
 Game::Game(std::string title, int width, int height){
