@@ -26,7 +26,7 @@ class Game{
         SDL_Renderer* GetRenderer();
         State& GetState();
 
-        static Game* GetInstance();
+        static Game& GetInstance();
         ~Game();
 };
 
