@@ -96,8 +96,8 @@ void State::AddObject(int mouseX, int mouseY){
     Sprite* sp = new Sprite(*obj, "./src/resources/img/penguinface.png");
 
     obj->AddComponent(sp);
-    obj->box.x = mouseX;
-    obj->box.y = mouseY;
+    obj->box.x = mouseX - obj->box.CoordCenter().x;
+    obj->box.y = mouseY - obj->box.CoordCenter().y;
 
     Sound* snd = new Sound(*obj, "./src/resources/audio/boom.wav");
     obj->AddComponent(snd);

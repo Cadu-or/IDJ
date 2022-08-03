@@ -8,11 +8,11 @@ void Face::Damage(int damage){
     Sethitpoints(Gethitpoints() - damage);
 
     if(Gethitpoints() <= 0){
+        associated.RequestDelete();
         Sound* snd = (Sound*)this->associated.GetComponent("Sound");
         if(snd != nullptr){
             snd->Play();
         }
-        associated.RequestDelete();
     }
 }
 
