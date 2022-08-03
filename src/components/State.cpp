@@ -11,6 +11,7 @@ State::State(){
 
 void State::Update(float dt){
     if(SDL_QuitRequested()){
+        music->Stop(1500);
         quitRequested = true;
     }else{ 
         quitRequested = false;
