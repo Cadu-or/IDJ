@@ -30,7 +30,7 @@ void Sound::SetChannel(int channel){
 }
 
 int Sound::GetChannel(){
-    return this->channel;
+    return channel;
 }
 
 Sound::~Sound(){

@@ -46,6 +46,6 @@ float Vec2::InclXPoints(Vec2 &vet){
 Vec2 Vec2::GetRotated(float ang){
     Vec2 v;
     v.x = ((this -> x * cos(ang)) - (this -> y * sin(ang)));
-    v.y = ((this -> x * cos(ang)) - (this -> y * sin(ang)));
+    v.y = ((this -> y * cos(ang)) + (this -> x * sin(ang)));
     return v;
 }   

@@ -50,5 +50,5 @@ Component* GameObject::GetComponent(std::string type){
 }
 
 bool GameObject::IsDead(){
-    return this->isDead;
+    return isDead;
 }
