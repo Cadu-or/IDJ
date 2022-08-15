@@ -1,0 +1,369 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Aug 10 13:19:28 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+SNAP_COMMON = /var/snap/code/common
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+NVM_INC = /home/cadu/.nvm/versions/node/v16.6.1/include/node
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+rvm_path = /home/cadu/.rvm
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/cadu/Área de Trabalho/T4
+# environment
+RBENV_SHELL = bash
+# environment
+SNAP_DATA = /var/snap/code/103
+# environment
+VTE_VERSION = 6003
+# environment
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"89ebf7d0bb12d1282a52b02d65044dbc.pt-br","_translationsConfigFile":"/home/cadu/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br/tcf.json","_cacheRoot":"/home/cadu/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br","_resolvedLanguagePackCoreLocation":"/home/cadu/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/home/cadu/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br/corrupted.info","_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 9:43744
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+SNAP_ARCH = amd64
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+IM_CONFIG_PHASE = 1
+# environment
+USERNAME = cadu
+# environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=ec5b949115c06662da6965c562f3da1d
+# environment
+MANAGERPID = 1802
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_CWD = /home/cadu/Área de Trabalho/T4
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/103/usr/share/glib-2.0/schemas
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/cadu/.nvm/versions/node/v16.6.1/bin:/home/cadu/.rbenv/plugins/ruby-build/bin:/home/cadu/.rbenv/shims:/home/cadu/.rbenv/bin:/home/cadu/bin:/home/cadu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/cadu/.rvm/bin
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/cadu-Inspiron-3442:@/tmp/.ICE-unix/2087,unix/cadu-Inspiron-3442:/tmp/.ICE-unix/2087
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/cadu/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+SNAP = /snap/code/103
+# environment
+NVM_BIN = /home/cadu/.nvm/versions/node/v16.6.1/bin
+# environment
+SNAP_VERSION = da76f933
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+DISABLE_WAYLAND = 1
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+PASSWORD = sense8
+# environment
+INVOCATION_ID = 4adffbe2d49047ed8152f0aeb0e2d65b
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/103/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+SNAP_INSTANCE_KEY = 
+# environment
+rvm_bin_path = /home/cadu/.rvm/bin
+# environment
+PWD = /home/cadu/Área de Trabalho/T4
+# environment
+QT_QPA_PLATFORMTHEME = appmenu-qt5
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 2050
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/cadu
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/cadu/.config/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
+# environment
+LOGNAME = cadu
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# environment
+SNAP_CONTEXT = 6AeaUPMFH16NG6JjGIZ4QGaNr47tRx05X_eBQNyMmxTNdc_CHS0h
+# environment
+NVM_CD_FLAGS = 
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SNAP_USER_COMMON = /home/cadu/snap/code/common
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from 'Makefile', line 1)
+TARGET_EXEC := game
+# environment
+MAKELEVEL := 0
+# environment
+SNAP_REAL_HOME = /home/cadu
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# environment
+SNAP_USER_DATA = /home/cadu/snap/code/103
+# environment
+SHLVL = 1
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = cadu
+# environment
+SNAP_REVISION = 103
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+rvm_version = 1.29.12 (latest)
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = pt_BR:pt:en
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-b2d82c20-1.70.0-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+NVM_DIR = /home/cadu/.nvm
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile
+SHELL = /bin/sh
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+GTK2_MODULES = overlay-scrollbar
+# environment
+QT_ACCESSIBILITY = 1
+# makefile (from 'Makefile', line 6)
+CMPS := ./src/components/GameObject.cpp ./src/components/Music.cpp ./src/components/Camera.cpp ./src/components/TileSet.cpp ./src/components/Sound.cpp ./src/components/Vec2.cpp ./src/components/CameraFollower.cpp ./src/components/Sprite.cpp ./src/components/InputManager.cpp ./src/components/State.cpp ./src/components/main.cpp ./src/components/Face.cpp ./src/components/Resources.cpp ./src/components/TileMap.cpp ./src/components/Component.cpp ./src/components/Game.cpp ./src/components/Rect.cpp
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
+# 'override' directive
+.SHELLSTATUS := 0
+# default
+MAKEFILES := 
+# environment
+SNAP_COOKIE = 6AeaUPMFH16NG6JjGIZ4QGaNr47tRx05X_eBQNyMmxTNdc_CHS0h
+# automatic
+<F = $(notdir $<)
+# environment
+SNAP_NAME = code
+# environment
+LC_ALL = C
+# environment
+DBUS_STARTER_BUS_TYPE = session
+# environment
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/252aa3ed_70b8_4193_b25d_f7b56814a726
+# automatic
+^F = $(notdir $^)
+# environment
+rvm_prefix = /home/cadu
+# environment
+GNOME_TERMINAL_SERVICE = :1.89
+# default
+SUFFIXES := 
+# makefile (from 'Makefile', line 2)
+FLAGS := -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
+# environment
+SNAP_REEXEC = 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# makefile (from 'Makefile', line 4)
+CMP_DIR := ./src/components
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+ 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_PID = 3978
+# environment
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=ec5b949115c06662da6965c562f3da1d
+# variable set hash-table stats:
+# Load=136/1024=13%, Rehash=0, Collisions=18/172=10%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2054, inode 2512770): 7 files, no impossibilities.
+
+# 7 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+all:
+#  Command line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  recipe to execute (from 'Makefile', line 9):
+	g++ -std=c++11 $(CMPS) -o $(TARGET_EXEC) $(FLAGS)
+	./$(TARGET_EXEC)
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-18 11:09:38.335864
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=4/1024=0%, Rehash=0, Collisions=0/16=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 12 / storage = 96 B / avg = 8 B
+# current buf: size = 8162 B / used = 96 B / count = 12 / avg = 8 B
+
+# strcache performance: lookups = 19 / hit rate = 36%
+# hash-table stats:
+# Load=12/8192=0%, Rehash=0, Collisions=1/19=5%
+# Finished Make data base on Wed Aug 10 13:19:28 2022
+
+ 
