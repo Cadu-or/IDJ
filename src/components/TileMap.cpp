@@ -95,3 +95,5 @@ void TileMap::Update(float dt){}
 bool TileMap::Is(std::string type){
     return (type == "TileMap" ? true : false);
 }
+
+void TileMap::NotifyCollision(GameObject& other){}

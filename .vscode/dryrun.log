@@ -1,6 +1,6 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/home/cadu/Área de Trabalho/T5'
-g++ -std=c++11 ./src/components/GameObject.cpp ./src/components/Music.cpp ./src/components/Camera.cpp ./src/components/TileSet.cpp ./src/components/Sound.cpp ./src/components/Vec2.cpp ./src/components/CameraFollower.cpp ./src/components/Sprite.cpp ./src/components/InputManager.cpp ./src/components/State.cpp ./src/components/main.cpp ./src/components/Face.cpp ./src/components/Resources.cpp ./src/components/TileMap.cpp ./src/components/Component.cpp ./src/components/Game.cpp ./src/components/Rect.cpp -o game -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/cadu/Área de Trabalho/T6'
+g++ -std=c++11 ./src/components/Collider.cpp ./src/components/Bullet.cpp ./src/components/GameObject.cpp ./src/components/Music.cpp ./src/components/Camera.cpp ./src/components/TileSet.cpp ./src/components/Alien.cpp ./src/components/Minion.cpp ./src/components/Sound.cpp ./src/components/Vec2.cpp ./src/components/CameraFollower.cpp ./src/components/Sprite.cpp ./src/components/Collision.cpp ./src/components/InputManager.cpp ./src/components/State.cpp ./src/components/PenguinBody.cpp ./src/components/main.cpp ./src/components/PenguinCannon.cpp ./src/components/Resources.cpp ./src/components/TileMap.cpp ./src/components/Component.cpp ./src/components/Game.cpp ./src/components/Rect.cpp ./src/components/Timer.cpp -o game -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
 ./game
-make: Leaving directory '/home/cadu/Área de Trabalho/T5'
+make: Leaving directory '/home/cadu/Área de Trabalho/T6'
  

@@ -64,3 +64,5 @@ void GameObject::Start(){
     }
     started = true;
 }
+
+void GameObject::NotifyCollision(GameObject& other){}

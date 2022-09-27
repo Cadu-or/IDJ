@@ -28,6 +28,7 @@ class GameObject{
 
         double angleDeg;
         
+        void NotifyCollision(GameObject& other);
     private:
         std::vector<std::unique_ptr<Component>> components;
         bool isDead;

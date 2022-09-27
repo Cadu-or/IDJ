@@ -8,6 +8,7 @@
 #include "SDL_include.h"
 #include <bits/stdc++.h>
 #include <unordered_map>
+#include "Collider.h"
 
 #define LEFT_ARROW_KEY SDLK_LEFT
 #define RIGHT_ARROW_KEY SDLK_RIGHT
