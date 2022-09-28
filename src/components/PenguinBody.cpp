@@ -8,7 +8,7 @@ PenguinBody::PenguinBody(GameObject &associated) : Component(associated){
     speed = Vec2(0,0);
     linearSpeed = 0.1;
     angle = 0;
-    hp = 100;
+    hp = 70;
     player = this;
     Sprite* sp = new Sprite(associated, "./src/resources/img/penguin.png");
     associated.AddComponent(sp);
@@ -32,6 +32,21 @@ void PenguinBody::Start(){
 }
 
 void PenguinBody::Update(float dt){
+    if(hp <= 0){
+        Camera::Unfollow();
+        associated.RequestDelete();
+
+        GameObject* obj = new GameObject();
+        State* instance = &Game::GetInstance().GetState();
+        
+        Sprite* sp = new Sprite(*obj, "./src/resources/img/penguindeath.png", 5, 0.1, 0.2);
+        obj->box.x = associated.box.CoordCenter().x - obj->box.w/2;
+        obj->box.y = associated.box.CoordCenter().y - obj->box.h/2;
+
+        obj->AddComponent(sp);
+        instance->AddObject(obj);
+    }
+
     InputManager instance = InputManager::GetInstance();
     if(instance.IsKeyDown(SDLK_w) and linearSpeed < 200){
         linearSpeed += 10;
@@ -56,13 +71,7 @@ void PenguinBody::Update(float dt){
     associated.box.x += dest.x;
     associated.box.y += dest.y;
 
-    if(hp <= 0){
-        std::shared_ptr<GameObject> obj = pcannon.lock();
-        obj->RequestDelete();
 
-        associated.RequestDelete();
-        Camera::Unfollow();
-    }
 }
 
 bool PenguinBody::Is(std::string type){
@@ -72,7 +81,14 @@ bool PenguinBody::Is(std::string type){
 void PenguinBody::Render(){}
 
 void PenguinBody::NotifyCollision(GameObject& other){
-    std::cout << "Houve Colisão PBody" << std::endl;
+    Bullet* bull = (Bullet*)other.GetComponent("Bullet");
+    if(bull != nullptr){
+        if(bull->targetsPlayer){
+            hp = hp - bull->GetDamage();
+            std::cout << hp << std::endl;
+            other.RequestDelete();
+        }
+    }
 }
 
 Vec2 PenguinBody::GetCenter(){

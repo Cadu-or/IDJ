@@ -26,6 +26,7 @@ void GameObject::Render(){
 
 void GameObject::RequestDelete(){
     this->isDead = true;
+    std::cout << "aloo" << std::endl;
 }
 
 void GameObject::AddComponent(Component* cpt){
@@ -65,4 +66,8 @@ void GameObject::Start(){
     started = true;
 }
 
-void GameObject::NotifyCollision(GameObject& other){}
+void GameObject::NotifyCollision(GameObject& other){
+    for(int i = 0; i < components.size(); i++){
+        components[i]->NotifyCollision(other);
+    }
+}

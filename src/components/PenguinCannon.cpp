@@ -52,7 +52,7 @@ void PenguinCannon::Shoot(){
     obj->box.y = aux.y;
     obj->angleDeg = angle*180/M_PI;
 
-    Bullet* bullet = new Bullet(*obj, angle, 512, 10, 1024, "./src/resources/img/penguinbullet.png", 4);
+    Bullet* bullet = new Bullet(*obj, angle, 512, 10, 1024, "./src/resources/img/penguinbullet.png", 4, false);
     obj->AddComponent(bullet);
 
     State *instance = &Game::GetInstance().GetState();
@@ -65,5 +65,5 @@ void PenguinCannon::Render(){}
 void PenguinCannon::Start(){}
 
 void PenguinCannon::NotifyCollision(GameObject& other){
-    std::cout << "Houve Colisão Canon" << std::endl;
+
 }

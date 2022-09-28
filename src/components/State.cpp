@@ -59,11 +59,6 @@ void State::Update(float dt){
         quitRequested = true;
     }
 
-    // if(input.KeyPress(SDLK_SPACE)){
-	// 	Vec2 objPos = Vec2( 200, 0 ).GetRotated( -M_PI + M_PI*(rand() % 1001)/500.0 ) + Vec2(input.GetMouseX(), input.GetMouseY());
-	// 	AddObject((int)objPos.x, (int)objPos.y);
-	// }
-
 	Camera::Update(dt);
 
 	for(int i = 0; i < objectarray.size(); i++){

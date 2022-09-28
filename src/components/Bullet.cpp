@@ -1,6 +1,6 @@
 #include "../include/Bullet.h"
 
-Bullet::Bullet(GameObject& associated, float angle, float speed, int damage, float maxDistance, std::string sprite, int frameCount) : Component(associated){
+Bullet::Bullet(GameObject& associated, float angle, float speed, int damage, float maxDistance, std::string sprite, int frameCount, bool targetsPlayer) : Component(associated){
     Sprite *sp = new Sprite(associated, sprite, frameCount, 0.7);
     associated.box.x -= sp->GetWidth()/2;
     associated.box.y -= sp->GetHeight()/2;
@@ -9,6 +9,7 @@ Bullet::Bullet(GameObject& associated, float angle, float speed, int damage, flo
     this->speed.y = Vec2(speed, 0).GetRotated(angle).y;
     distanceLeft = maxDistance;
     this->damage = damage;
+    this->targetsPlayer = targetsPlayer;
 
     Collider* cll = new Collider(associated);
     associated.AddComponent(cll);
@@ -41,5 +42,5 @@ int Bullet::GetDamage(){
 void Bullet::Start(){}
 
 void Bullet::NotifyCollision(GameObject &other){
-    std::cout << "Houve Colisão Bullet" << std::endl;
+    // std::cout << "Houve Colisão Bullet" << std::endl;
 }

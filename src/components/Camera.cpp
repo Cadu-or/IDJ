@@ -37,8 +37,5 @@ void Camera::Update(float dt){
         }
 
         pos = speed.Normal()*aux*dt + pos;
-        // std::cout << "posx" << pos.x << std::endl;
-        // std::cout << "posy" << pos.y << std::endl;
-        // std::cout << "dt" << dt << std::endl;
     }
 }

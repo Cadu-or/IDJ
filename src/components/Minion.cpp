@@ -28,7 +28,7 @@ void Minion::Update(float dt){
     float cUpdate = M_PI/2*dt;
 
     Vec2 center = alienCenter.lock()->box.CoordCenter();
-    Vec2 orMinion = Vec2(200, 0).GetRotated(arc)+center;
+    Vec2 orMinion = Vec2(150, 0).GetRotated(arc)+center;
 
     associated.box.x = orMinion.x - associated.box.w/2;
     associated.box.y = orMinion.y - associated.box.h/2;
@@ -48,7 +48,7 @@ void Minion::Shoot(Vec2 target){
     float angle = dir.InclX();
 
     GameObject* obj = new GameObject();
-    Bullet* bullet = new Bullet(*obj, angle, 250, 10, 1024, "./src/resources/img/minionbullet2.png", 3);
+    Bullet* bullet = new Bullet(*obj, angle, 250, 10, 1024, "./src/resources/img/minionbullet2.png", 3, true);
 
     obj->box.x = associated.box.x;
     obj->box.y = associated.box.y;
@@ -63,6 +63,4 @@ void Minion::Shoot(Vec2 target){
 
 Minion::~Minion(){}
 
-void Minion::NotifyCollision(GameObject& other){
-    std::cout << "Houve Colisão Minion" << std::endl;
-}
+void Minion::NotifyCollision(GameObject& other){}
