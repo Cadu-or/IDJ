@@ -1,5 +1,5 @@
 # Introdução ao Desenvolvimento de Jogos.
-### Trabalho 2 da disciplina.
+### Trabalho 7 da disciplina.
 
 Programa desenvolvido utilizando o Ubuntu 20.04.
 
