@@ -20,6 +20,7 @@ class TileMap : public Component {
         int GetDepth();
         void Update(float dt);
         bool Is(std::string);
+        void NotifyCollision(GameObject& other);
     
     private:
         std::vector<int> tileMatrix;

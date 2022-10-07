@@ -1,13 +1,18 @@
 #include "../include/Bullet.h"
 
-Bullet::Bullet(GameObject& associated, float angle, float speed, int damage, float maxDistance, std::string sprite) : Component(associated){
-    Sprite *sp = new Sprite(associated, sprite);
+Bullet::Bullet(GameObject& associated, float angle, float speed, int damage, float maxDistance, std::string sprite, int frameCount, bool targetsPlayer) : Component(associated){
+    Sprite *sp = new Sprite(associated, sprite, frameCount, 0.7);
+    associated.box.x -= sp->GetWidth()/2;
+    associated.box.y -= sp->GetHeight()/2;
     associated.AddComponent(sp);
     this->speed.x = Vec2(speed, 0).GetRotated(angle).x;
     this->speed.y = Vec2(speed, 0).GetRotated(angle).y;
     distanceLeft = maxDistance;
     this->damage = damage;
+    this->targetsPlayer = targetsPlayer;
 
+    Collider* cll = new Collider(associated);
+    associated.AddComponent(cll);
 }
 
 void Bullet::Update(float dt){
@@ -35,3 +40,6 @@ int Bullet::GetDamage(){
 }
 
 void Bullet::Start(){}
+
+void Bullet::NotifyCollision(GameObject &other){
+}

@@ -1,8 +1,10 @@
 #include "../include/Game.h"
+#include "../include/TitleState.h"
 
 int main(int argc, char** argv){
-    Game game = Game::GetInstance();
-    game.Run();
+    srand(time(NULL));
+    Game::GetInstance().Push(new TitleState());
+    Game::GetInstance().Run();
 
     return 0;
 }

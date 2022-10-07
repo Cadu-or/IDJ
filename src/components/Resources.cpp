@@ -4,6 +4,7 @@
 std::unordered_map<std::string, SDL_Texture*> Resources::imageTable;
 std::unordered_map<std::string, Mix_Music*> Resources::musicTable;
 std::unordered_map<std::string, Mix_Chunk*> Resources::soundTable;
+std::unordered_map<std::string, TTF_Font*> Resources::fontTable;
 
 SDL_Texture* Resources::GetImage(std::string file){
     auto it = Resources::imageTable.find(file);
@@ -53,3 +54,20 @@ void Resources::ClearSounds(){
     }
 }
 
+TTF_Font* Resources::GetFont(std::string file, int fontSize){
+    std::string key = file + std::to_string(fontSize);
+    auto it = Resources::fontTable.find(key);
+    if(it != Resources::fontTable.end()){
+        return it->second;
+    }else{
+        Resources::fontTable[key] = TTF_OpenFont(file.c_str(), fontSize);
+    }
+    
+    return fontTable[key];
+}
+
+void Resources::ClearFonts(){
+    for(auto i = Resources::fontTable.begin(); i != Resources::fontTable.end(); i++){
+        TTF_CloseFont(i->second);
+    }
+}

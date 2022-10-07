@@ -22,6 +22,10 @@ Vec2 Vec2::operator*(float escalar){
     return Vec2(this->x * escalar, this->y*escalar);
 }
 
+Vec2 Vec2::operator*(float const escalar) const{
+    return Vec2(x*escalar, y*escalar);
+}
+
 float Vec2::Magnitude(){
     return sqrt((this->x * this->x) + (this->y * this->y));
 }

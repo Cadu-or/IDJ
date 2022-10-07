@@ -17,6 +17,7 @@ class Vec2{
         Vec2 operator+(Vec2 vet);
         Vec2 operator-(Vec2 vet);
         Vec2 operator*(float escalar);
+        Vec2 operator*(float const escalar) const;
 
         float Magnitude();
         Vec2 Normal();

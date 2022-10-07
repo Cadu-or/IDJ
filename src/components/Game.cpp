@@ -21,6 +21,7 @@ Game::Game(std::string title, int width, int height){
         IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF) == 0 ? throw std::string("IMG") : NULL;
         Mix_Init(MIX_INIT_FLAC | MIX_INIT_OGG | MIX_INIT_MP3 | MIX_INIT_MOD) == 0? throw std::string("AUDIO") : NULL;
         Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024) != 0 ? throw std::string("O_AUDIO") : NULL;
+        TTF_Init()!= 0 ? throw std::string("O_FONT"): NULL;
         
     }catch (std::string error){
         std::cout << "Erro: " << error << std::endl;
@@ -40,15 +41,24 @@ Game::Game(std::string title, int width, int height){
 
     frameStart = 0;
     dt = 0;
-    state = new State();
+    storedState = nullptr;
     // std::cout << "STATE" << std::endl;
 }
 
 Game::~Game(){
+    if(storedState != nullptr){
+        delete(storedState);
+    }
+
+    while(!stateStack.empty()){
+        stateStack.pop();
+    }
+
     Mix_CloseAudio();
     Mix_Quit();
     IMG_Quit();
-    
+    TTF_Quit();
+
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
 
@@ -60,20 +70,46 @@ SDL_Renderer* Game::GetRenderer(){
     return renderer;
 }
 
-State& Game::GetState(){
-    return *state;
+State& Game::GetCurrentState(){
+    return *stateStack.top();
+}
+
+void Game::Push(State* state){
+    storedState = state;
 }
 
 void Game::Run(){
-    state->Start();
-    while(state->QuitRequested() != true){
+    if(storedState != nullptr){
+        stateStack.emplace(storedState);
+        storedState = nullptr;
+        stateStack.top()->Start();
+    }else{
+        exit(0);
+    }
+
+    while(!stateStack.top()->QuitRequested() and !stateStack.empty()){
+        if(stateStack.top()->PopRequested()){
+            stateStack.top()->Pause();
+            stateStack.pop();
+
+            if(!stateStack.empty()){
+                stateStack.top()->Resume();
+            }
+        }
+
+        if(storedState!=nullptr){
+            stateStack.top()->Pause();
+            stateStack.emplace(storedState);
+            stateStack.top()->Start();
+            storedState = nullptr;
+        }
+
         CalculateDeltaTime();
-        // std::cout << "DeltaTime: " << dt << std::endl;
         InputManager::GetInstance().Update();
-        state->Update(dt);
-        // std::cout << "=== Update ===" << std::endl;
-        state->Render();
-        // std::cout << "=== Render ===" << std::endl;
+
+        stateStack.top()->Update(dt);
+        stateStack.top()->Render();
+        
         SDL_RenderPresent(renderer);
         SDL_Delay(33);
     }

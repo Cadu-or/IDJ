@@ -6,7 +6,6 @@ Minion::Minion(GameObject& associated,std::weak_ptr<GameObject> alienCenter, flo
     float scale = 1 + ((float)(rand()%50)/100);
     sp->SetScale(scale, scale);
 
-    std::cout << sqrt(scale) << std::endl;
     associated.AddComponent(sp);
 
     this->alienCenter = alienCenter;
@@ -16,6 +15,9 @@ Minion::Minion(GameObject& associated,std::weak_ptr<GameObject> alienCenter, flo
     associated.box.y = go->box.CoordCenter().y + 0 - associated.box.h/2;
     
     arc = arcOffsetDeg;
+
+    Collider* cll = new Collider(associated);
+    associated.AddComponent(cll);
 }
 
 void Minion::Update(float dt){
@@ -26,7 +28,7 @@ void Minion::Update(float dt){
     float cUpdate = M_PI/2*dt;
 
     Vec2 center = alienCenter.lock()->box.CoordCenter();
-    Vec2 orMinion = Vec2(200, 0).GetRotated(arc)+center;
+    Vec2 orMinion = Vec2(150, 0).GetRotated(arc)+center;
 
     associated.box.x = orMinion.x - associated.box.w/2;
     associated.box.y = orMinion.y - associated.box.h/2;
@@ -46,7 +48,7 @@ void Minion::Shoot(Vec2 target){
     float angle = dir.InclX();
 
     GameObject* obj = new GameObject();
-    Bullet* bullet = new Bullet(*obj, angle, 250, 10, 1024, "./src/resources/img/minionbullet1.png");
+    Bullet* bullet = new Bullet(*obj, angle, 250, 10, 1024, "./src/resources/img/minionbullet2.png", 3, true);
 
     obj->box.x = associated.box.x;
     obj->box.y = associated.box.y;
@@ -55,8 +57,10 @@ void Minion::Shoot(Vec2 target){
     obj->AddComponent(bullet);
 
 
-    State *instance = &Game::GetInstance().GetState();
+    State *instance = &Game::GetInstance().GetCurrentState();
     instance->AddObject(obj);
 }
 
 Minion::~Minion(){}
+
+void Minion::NotifyCollision(GameObject& other){}

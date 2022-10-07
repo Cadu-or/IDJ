@@ -16,27 +16,38 @@
 #include "InputManager.h"
 #include "CameraFollower.h"
 #include "Alien.h"
+#include "PenguinBody.h"
+#include "PenguinCannon.h"
 
 class State{
-    private:
-        Sprite* bg;
-        Music* music;
-        bool quitRequested;
-        std::vector<std::shared_ptr<GameObject>> objectarray;
-        void AddObject(int mouseX, int mouseY);
-        bool started;
-
     public:
         State();
-        bool QuitRequested();
-        void LoadAssets();
-        void Update(float dt);
-        void Render();
-        void Start();
-        std::weak_ptr <GameObject> AddObject(GameObject* go);
-        std::weak_ptr <GameObject> GetObjectPtr(GameObject* go);
-        ~State();
+        virtual ~State();
 
+        virtual void LoadAssets() = 0;
+        virtual void Update(float dt) = 0;
+        virtual void Render() = 0;
+
+        virtual void Start() = 0;
+        virtual void Pause() = 0;
+        virtual void Resume() = 0;
+
+        virtual std::weak_ptr <GameObject> AddObject(GameObject* go);
+        virtual std::weak_ptr <GameObject> GetObjectPtr(GameObject* go);
+        
+        bool QuitRequested();
+        bool PopRequested();
+    
+    protected:
+        void StartArray();
+        virtual void UpdateArray(float dt);
+        virtual void RenderArray();
+        
+        bool popRequested;
+        bool quitRequested;
+        bool started;
+
+        std::vector<std::shared_ptr<GameObject>> objectarray;
 };
 
 #endif

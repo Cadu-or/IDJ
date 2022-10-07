@@ -6,11 +6,16 @@ Sprite::Sprite(GameObject& associated):Component(associated){
     SetScale(1, 1);
 }
 
-Sprite::Sprite(GameObject& associated, std::string file):Component(associated){
+Sprite::Sprite(GameObject& associated, std::string file, int frameCount, float frameTime, float secondsToSelfDestruct):Component(associated){
     // std::cout << "Sprite file: " << file << std::endl;
     texture = nullptr;
     SetScale(1, 1);
     Open(file);
+    SetFrameCount(frameCount);
+    SetFrameTime(frameTime);
+    SetFrame(0);
+    this->secondsToSelfDestruct = secondsToSelfDestruct;
+    selfDestructCount = Timer();
 }
 
 Sprite::~Sprite(){
@@ -58,14 +63,33 @@ int Sprite::GetHeight(){
 }
 
 int Sprite::GetWidth(){
-    return scale.x*width;
+    return scale.x*(width/frameCount);
 }
 
 bool Sprite::IsOpen(){
     return (texture == nullptr ? false : true);
 }
 
-void Sprite::Update(float dt){}
+void Sprite::Update(float dt){
+    timeElapsed += dt;
+
+    if(secondsToSelfDestruct > 0){
+        selfDestructCount.Update(dt);
+        if(selfDestructCount.Get() > secondsToSelfDestruct){
+            associated.RequestDelete();
+        }
+    }
+
+    if(timeElapsed >= frameTime){
+        timeElapsed = 0;
+        currentFrame++;
+
+        if(currentFrame >= frameCount){
+            currentFrame = 0;
+        }
+        SetFrame(currentFrame);
+    }
+}
 
 bool Sprite::Is(std::string type){
     return (type == "Sprite" ? true : false);
@@ -78,4 +102,27 @@ void Sprite::SetScale(float scaleX, float scaleY){
 
 Vec2 Sprite::GetScale(){
     return scale;
+}
+
+void Sprite::SetFrameCount(int frameCount){
+    this->frameCount = frameCount;
+    SetFrame(0);
+}
+
+void Sprite::SetFrameTime(float frameTime){
+    this->frameTime = frameTime;
+}
+
+void Sprite::SetFrame(int frame){
+    currentFrame = frame;
+    associated.box.w = GetWidth();
+
+    int x = frame*GetWidth();
+    int y = 0;
+    int w = width/frameCount;
+    int h = height;
+    SetClip(x, y, w, h);
+}
+
+void Sprite::NotifyCollision(GameObject& other){
 }

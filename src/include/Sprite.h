@@ -7,6 +7,7 @@
 #include "SDL_include.h"
 #include "GameObject.h"
 #include "Resources.h"
+#include "Timer.h"
 
 #include <bits/stdc++.h>
 
@@ -17,10 +18,16 @@ class Sprite : public Component{
         int height;
         SDL_Rect clipRect;
         Vec2 scale;
+        int frameCount;
+        int currentFrame;
+        float timeElapsed;
+        float frameTime;
+        Timer selfDestructCount;
+        float secondsToSelfDestruct;
         
     public:
         Sprite(GameObject& associated);
-        Sprite(GameObject& associated, std::string file);
+        Sprite(GameObject& associated, std::string file, int frameCount = 1, float frameTime = 1, float secondsToSelfDestruct = 0);
         ~Sprite();
         void Open(std::string file);
         void SetClip(int x, int y, int w, int h);
@@ -33,6 +40,10 @@ class Sprite : public Component{
         bool Is(std::string type);
         void SetScale(float scalex, float scaley);
         Vec2 GetScale();
+        void SetFrame(int frame);
+        void SetFrameCount(int frameCount);
+        void SetFrameTime(float frameTime);
+        void NotifyCollision(GameObject& other);
 };
 
 #endif

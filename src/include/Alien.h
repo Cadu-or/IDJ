@@ -14,31 +14,31 @@
 #include "Minion.h"
 #include "State.h"
 #include <time.h>
+#include "Timer.h"
 
 class Alien : public Component{
     private:
-        class Action{
-            public:
-                enum ActionType{MOVE, SHOOT};
-                Action(ActionType type, float x, float y);
-                ActionType type;
-                Vec2 pos;
-        };
-
         Vec2 speed;
         int hp;
-        std::queue<Action> taskQueue;
         std::vector<std::weak_ptr<GameObject>> minionArray;
         int nMinions;
 
-    public:
-        Alien(GameObject& associated, int nMinions);
+        enum AlienState {MOVING, RESTING};
+        AlienState state;
+        Timer restTimer;
+        Vec2 destination;
+        float offset;
 
+    public:
+        Alien(GameObject& associated, int nMinions, float offset);
         void Start();
 
         void Update(float dt);
         void Render();
         bool Is(std::string type);
+        void NotifyCollision(GameObject &other);
+
+        static int alienCount;
 
         ~Alien();
 };

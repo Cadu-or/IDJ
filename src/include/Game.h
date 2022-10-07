@@ -3,6 +3,7 @@
 
 #define INCLUDE_SDL_MIXER
 #define INCLUDE_SDL_IMAGE
+#define INCLUDE_SDL_TTF
 
 #include "SDL_include.h"
 #include <bits/stdc++.h>
@@ -10,26 +11,33 @@
 #include <time.h>
 #include "State.h"
 #include "InputManager.h"
+#include "StageState.h"
 
 class Game{
     private:
-        SDL_Window* window;
-        SDL_Renderer* renderer;
-        State* state;
-        static Game* Instance;
-        Game(std::string title, int width, int height);
-        int frameStart;
-        float dt;
         void CalculateDeltaTime();
 
-    public:
-        void Run();
+        int frameStart;
+        float dt;
+        
+        static Game* Instance;
+        
+        State* storedState;
+        SDL_Window* window;
+        SDL_Renderer* renderer;
+        std::stack<std::unique_ptr<State>> stateStack;
 
-        SDL_Renderer* GetRenderer();
-        State& GetState();
+    public:
+        Game(std::string title, int width, int height);
+        ~Game();
 
         static Game& GetInstance();
-        ~Game();
+        SDL_Renderer* GetRenderer();
+        State& GetCurrentState();
+        
+        void Push(State* state);
+
+        void Run();
 
         float GetDeltaTime();
 };

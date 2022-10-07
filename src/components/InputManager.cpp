@@ -33,34 +33,34 @@ void InputManager::Update(){
         switch(event.type){
 
         case SDL_QUIT:
-            std::cout << "ESC" << std::endl;
+            // std::cout << "ESC" << std::endl;
             quitRequested = true;
             break;
 
         case SDL_MOUSEBUTTONDOWN:
             if(!event.key.repeat){
-                std::cout << "MOUSE DOWN" << std::endl;
+                // std::cout << "MOUSE DOWN" << std::endl;
                 mouseState[event.button.button] = true;
                 mouseUpdate[event.button.button] = updateCounter;
             }
             break;
 
         case SDL_MOUSEBUTTONUP:
-            std::cout << "MOUSE UP" << std::endl;
+            // std::cout << "MOUSE UP" << std::endl;
             mouseState[event.button.button] = false;
             mouseUpdate[event.button.button] = updateCounter;
             break;
         
         case SDL_KEYDOWN:
             if(!event.key.repeat){
-                std::cout << "KEY DOWN" << std::endl;
+                // std::cout << "KEY DOWN" << std::endl;
                 keyState[event.key.keysym.sym] = true;
                 keyUpdate[event.key.keysym.sym] = updateCounter;
             }
             break;
         
         case SDL_KEYUP:
-            std::cout << "KEY UP" << std::endl;
+            // std::cout << "KEY UP" << std::endl;
             keyState[event.key.keysym.sym] = false;
             keyUpdate[event.key.keysym.sym] = updateCounter;
             break;
